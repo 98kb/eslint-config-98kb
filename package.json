@@ -8,6 +8,7 @@
   "files": [
     "src/"
   ],
+  "repository": "98kb/eslint-config-98kb",
   "scripts": {
     "inspector": "pnpx @eslint/config-inspector",
     "lint": "eslint . && prettier -c ./src/*.js",
