@@ -8,10 +8,16 @@ importers:
 
   .:
     dependencies:
+      '@stylistic/eslint-plugin':
+        specifier: ^2.13.0
+        version: 2.13.0(eslint@9.27.0)(typescript@5.8.3)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.32.1
         version: 8.33.0(@typescript-eslint/parser@8.33.0(eslint@9.27.0)(typescript@5.8.3))(eslint@9.27.0)(typescript@5.8.3)
       '@typescript-eslint/parser':
+        specifier: ^8.32.1
+        version: 8.33.0(eslint@9.27.0)(typescript@5.8.3)
+      '@typescript-eslint/utils':
         specifier: ^8.32.1
         version: 8.33.0(eslint@9.27.0)(typescript@5.8.3)
       eslint-config-prettier:
@@ -29,6 +35,9 @@ importers:
       eslint-plugin-jsx-a11y:
         specifier: ^6.10.2
         version: 6.10.2(eslint@9.27.0)
+      eslint-plugin-n:
+        specifier: ^17.18.0
+        version: 17.18.0(eslint@9.27.0)
       eslint-plugin-prettier:
         specifier: ^5.4.0
         version: 5.4.0(eslint-config-prettier@9.1.0(eslint@9.27.0))(eslint@9.27.0)(prettier@3.5.3)
@@ -47,9 +56,6 @@ importers:
       eslint-plugin-sonarjs:
         specifier: ^3.0.2
         version: 3.0.2(eslint@9.27.0)
-      eslint-plugin-sort-imports-es6-autofix:
-        specifier: ^0.6.0
-        version: 0.6.0(eslint@9.27.0)
       eslint-plugin-testing-library:
         specifier: ^7.2.1
         version: 7.2.2(eslint@9.27.0)(typescript@5.8.3)
@@ -57,18 +63,9 @@ importers:
         specifier: ^8.32.1
         version: 8.33.0(eslint@9.27.0)(typescript@5.8.3)
     devDependencies:
-      '@stylistic/eslint-plugin':
-        specifier: ^2.13.0
-        version: 2.13.0(eslint@9.27.0)(typescript@5.8.3)
-      '@typescript-eslint/utils':
-        specifier: ^8.32.1
-        version: 8.33.0(eslint@9.27.0)(typescript@5.8.3)
       eslint:
         specifier: ^9.27.0
         version: 9.27.0
-      eslint-plugin-n:
-        specifier: ^17.18.0
-        version: 17.18.0(eslint@9.27.0)
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -865,11 +862,6 @@ packages:
     resolution: {integrity: sha512-LxjbfwI7ypENeTmGyKmDyNux3COSkMi7H/6Cal5StSLQ6edf0naP45SZR43OclaNR7WfhVTZdhOn63q3/Y6puQ==}
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0
-
-  eslint-plugin-sort-imports-es6-autofix@0.6.0:
-    resolution: {integrity: sha512-2NVaBGF9NN+727Fyq+jJYihdIeegjXeUUrZED9Q8FVB8MsV3YQEyXG96GVnXqWt0pmn7xfCZOZf3uKnIhBrfeQ==}
-    peerDependencies:
-      eslint: '>=7.7.0'
 
   eslint-plugin-testing-library@7.2.2:
     resolution: {integrity: sha512-PaE4gwP3tMhmlcpOV0Hl21BA5SZIz3PiQYSgnHOY4rrSWZV4+r2BwbzUt2yU0xay2GtA+VNJxzKCbNMvEG2Uig==}
@@ -2788,10 +2780,6 @@ snapshots:
       scslre: 0.3.0
       semver: 7.7.1
       typescript: 5.8.3
-
-  eslint-plugin-sort-imports-es6-autofix@0.6.0(eslint@9.27.0):
-    dependencies:
-      eslint: 9.27.0
 
   eslint-plugin-testing-library@7.2.2(eslint@9.27.0)(typescript@5.8.3):
     dependencies:
