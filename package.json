@@ -12,7 +12,14 @@
   "scripts": {
     "inspector": "pnpx @eslint/config-inspector",
     "lint": "eslint . && prettier -c ./src/*.js",
-    "test": "pnpm run lint"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:rules": "vitest run tests/filename.test.js tests/exportLimit.test.js",
+    "test:typescript": "vitest run tests/typescript.test.js",
+    "test:integration": "vitest run tests/integration.test.js",
+    "build": "pnpm run lint && pnpm run test"
   },
   "license": "MIT",
   "dependencies": {
@@ -36,9 +43,13 @@
     "typescript-eslint": "^8.32.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.27.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "eslint": "*",
