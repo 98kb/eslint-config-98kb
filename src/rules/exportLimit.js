@@ -36,7 +36,7 @@ export const exportLimit = {
   },
 
   create(context) {
-    const options = context.getOptions()[0] || {};
+    const options = context.options[0] || {};
     const allowDefaultExport = options.allowDefaultExport !== false; // default true
     const allowTypeExports = options.allowTypeExports !== false; // default true
 
