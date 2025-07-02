@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-98kb",
-  "version": "9.0.3",
+  "version": "9.0.4",
   "description": "Sensible linting config for consistency and maintainability.",
   "author": "Yashodhan Singh <dsfx3d@gmail.com>",
   "main": "./src/index.js",
