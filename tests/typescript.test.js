@@ -55,47 +55,27 @@ describe('TypeScript specific tests', () => {
     });
   });
 
-  it('reports error for interface name not matching filename', () => {
-    tsRuleTester.run('filename TypeScript interface mismatch', filename, {
-      valid: [],
-      invalid: [
+  it('allows interface export regardless of filename match', () => {
+    tsRuleTester.run('filename TypeScript interface ignore filename', filename, {
+      valid: [
         {
           code: 'export interface WrongName {}',
           filename: 'user-data.ts',
-          errors: [
-            {
-              messageId: 'namedExportMismatch',
-              data: {
-                exportName: 'WrongName',
-                filename: 'user-data',
-                expectedName: 'UserData',
-              },
-            },
-          ],
         },
       ],
+      invalid: [],
     });
   });
 
-  it('reports error for type alias name not matching filename', () => {
-    tsRuleTester.run('filename TypeScript type alias mismatch', filename, {
-      valid: [],
-      invalid: [
+  it('allows type alias export regardless of filename match', () => {
+    tsRuleTester.run('filename TypeScript type alias ignore filename', filename, {
+      valid: [
         {
           code: 'export type WrongType = {};',
           filename: 'api-response.ts',
-          errors: [
-            {
-              messageId: 'namedExportMismatch',
-              data: {
-                exportName: 'WrongType',
-                filename: 'api-response',
-                expectedName: 'ApiResponse',
-              },
-            },
-          ],
         },
       ],
+      invalid: [],
     });
   });
 

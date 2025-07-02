@@ -69,6 +69,19 @@ export const filename = {
       return types.includes(declaration?.type);
     }
 
+    function isTypeExport(node) {
+      // Check if this is a TypeScript type export
+      return (
+        node.exportKind === "type" ||
+        (node.declaration &&
+          node.declaration.type === "TSTypeAliasDeclaration") ||
+        (node.declaration &&
+          node.declaration.type === "TSInterfaceDeclaration") ||
+        (node.specifiers &&
+          node.specifiers.some((spec) => spec.exportKind === "type"))
+      );
+    }
+
     function toCamelCase(str) {
       return str.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
     }
@@ -123,6 +136,11 @@ export const filename = {
 
     return {
       ExportNamedDeclaration(node) {
+        // Skip filename convention check for type exports
+        if (isTypeExport(node)) {
+          return;
+        }
+
         const exportName = getExportName(node);
         checkNameMatch(exportName, node);
       },

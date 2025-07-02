@@ -62,7 +62,7 @@ The `strict` configuration includes custom 98kb rules:
 
 ### `98kb/filename`
 
-Ensures that file names match exactly with their named export names. Supports camelCase, PascalCase, and kebab-case conversions.
+Ensures that file names match exactly with their named export names. Supports camelCase, PascalCase, and kebab-case conversions. TypeScript type exports (interfaces, type aliases, and type-only exports) are ignored by this rule.
 
 **Options:**
 
@@ -79,6 +79,12 @@ export const userService = {}; // camelCase allowed
 
 // api-client.js ❌
 export const wrongName = {}; // Should be apiClient or ApiClient
+
+// user-data.ts ✅
+export interface AnyName {} // Type exports are ignored
+
+// api-response.ts ✅
+export type SomeType = {}; // Type exports are ignored
 ```
 
 ### `98kb/export-limit`
