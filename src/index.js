@@ -5,5 +5,6 @@ export * from "./maintainability.js";
 export * from "./promise.js";
 export * from "./react.js";
 export * from "./recommended.js";
+export * from "./strict.js";
 export * from "./stylistic.js";
 export * from "./typescript.js";
