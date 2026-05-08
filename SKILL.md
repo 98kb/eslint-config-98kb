@@ -1,3 +1,8 @@
+---
+name: eslint-config-98kb
+description: ESLint skill guide for enforcing the 98kb linting conventions and rule expectations.
+---
+
 # eslint-config-98kb — Agent Skill Guide
 
 This guide covers every rule enforced by `eslint-config-98kb` so that agents can write compliant code from the start.
